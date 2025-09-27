@@ -1,20 +1,20 @@
 # GAS-LEAK-DETECTION-SYSTEM-USING-GAS-SENSOR
 
 ## Aim:
-	To measure the air quality using Gas Sensor  MQ-2 with Arduino UNO Board/ESP-32 using Tinker CAD.
+	
+ To measure the air quality using Gas Sensor  MQ-2 with Arduino UNO Board/ESP-32 using Tinker CAD.
 
 ## Hardware / Software Tools required:
-	PC/ Laptop with Internet connection
-  Tinker CAD tool (Online)
-	Arduino UNO Board/ESP-32
-  Gas sensor (MQ-2)
+
+PC/ Laptop with Internet connection,
+Tinker CAD tool (Online),
+Arduino UNO Board/ESP-32,
+Gas sensor (MQ-2).
 	
 ## Circuit Diagram:
 
+<img width="1006" height="719" alt="image" src="https://github.com/user-attachments/assets/b25bcf75-e33b-439f-946e-8fce05485b09" />
  
-
-
-
 
 ## Theory :
  The Arduino Uno is powered by the ATmega328P, an 8-bit microcontroller that runs at 16 MHz. It has 32 KB of flash memory, 2 KB of SRAM, and 1 KB of EEPROM. The board 
@@ -57,10 +57,43 @@ Step 7: Save Your Work
 •	Save the Circuit: Click "Save" to keep your circuit design and code for future use.
 
 ## Program:
+```
+int LED = 13;
+int MQ2pin = A0;
 
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  float sensorValue;
+  sensorValue = analogRead(MQ2pin);
+  
+  if(sensorValue >= 250)
+  {
+  	digitalWrite(LED, HIGH);
+    Serial.print(sensorValue);
+    Serial.print(" ");
+  }
+  else
+  {
+    digitalWrite(LED, LOW);
+    Serial.print(" ");
+    Serial.print(sensorValue);
+  }
+  
+  delay(1000);
+}
+```
 ## Output:
 
-   
+
+https://github.com/user-attachments/assets/c1ea507a-0d9f-46e0-88b4-5d9fdb8380ae
+
+
 
 ## Result:
+Thus, Gas Leak detection using Arduino Uno was successfully implemented using TinkerCad.
 
